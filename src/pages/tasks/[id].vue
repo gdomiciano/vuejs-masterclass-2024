@@ -10,9 +10,9 @@ watch(() => task.value?.name, () => {
 });
 
 const getTask = async () => {
-  const { data, error } = await taskQuery(parseInt(route.params.id, 10));
+  const { data, error, status } = await taskQuery(parseInt(route.params.id, 10));
 
-  if (error) console.error(error);
+  if (error) useErrorStore().setError({ error, customCode: status });
 
   task.value = data;
 };

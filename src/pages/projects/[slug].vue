@@ -10,9 +10,9 @@ watch(() => project.value?.name, () => {
 });
 
 const getProject = async () => {
-  const { data, error } = await projectQuery(route.params.slug);
+  const { data, error, status } = await projectQuery(route.params.slug);
 
-  if (error) console.error(error);
+  if (error) useErrorStore().setError({ error, customCode: status });
 
   project.value = data;
 };
@@ -20,6 +20,7 @@ const getProject = async () => {
 await getProject();
 </script>
 <template>
+
   <Table>
     <TableRow>
       <TableHead> Name </TableHead>
