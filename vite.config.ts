@@ -7,6 +7,7 @@ import autoprefixer from 'autoprefixer'
 import tailwind from 'tailwindcss'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import Components from 'unplugin-vue-components/vite'
 // https://vite.dev/config/
 export default defineConfig({
   css: {
@@ -34,6 +35,9 @@ export default defineConfig({
       imports: ['vue', VueRouterAutoImports],
       dts: true,
       viteOptimizeDeps: true,
+    }),
+    Components({
+      /* options */
     }),
   ],
   resolve: {
