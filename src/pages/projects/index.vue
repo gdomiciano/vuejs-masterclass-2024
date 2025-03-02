@@ -2,6 +2,7 @@
 import { supabase } from '@/lib/supabaseClient';
 import { ref } from 'vue';
 import type { Tables } from '../../../database/types';
+
 const projects = ref<Tables<'projects'>[] | null>();
 
 (async () => {
