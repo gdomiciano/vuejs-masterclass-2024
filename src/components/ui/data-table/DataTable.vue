@@ -58,3 +58,12 @@ const table = useVueTable({
     </Table>
   </div>
 </template>
+<style scoped>
+td {
+  @apply px-0;
+}
+
+td>* {
+  @apply px-4;
+}
+</style>
