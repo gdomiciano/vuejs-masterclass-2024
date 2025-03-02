@@ -1,8 +1,10 @@
+import type { CustomError } from '@/types/Error'
 export const useErrorStore = defineStore('error-store', () => {
-  const activeError = ref(false)
+  const activeError = ref<CustomError | null>()
 
-  const setError = () => {
-    activeError.value = true
+  const setError = ({ error, customCode }: { error: string; customCode: number }) => {
+    activeError.value = Error(error)
+    activeError.value.customCode = customCode
   }
 
   return {
