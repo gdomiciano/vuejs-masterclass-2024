@@ -1,11 +1,8 @@
 <script setup lang="ts">
+import AppErrorPage from '@/components/AppError/AppErrorPage.vue'
+useErrorStore().setError()
 </script>
-<template>
-  <div>
-    <h1>404 not found</h1>
-    <router-link to="/"> Go Home</router-link>
-  </div>
-</template>
-<style lang="">
 
-</style>
+<template>
+  <AppErrorPage />
+</template>
