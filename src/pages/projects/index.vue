@@ -4,6 +4,8 @@ import type { Tables } from '../../../database/types';
 import type { ColumnDef } from '@tanstack/vue-table';
 import { RouterLink } from 'vue-router';
 
+usePageStore().pageData.title = 'My projects page';
+
 const projects = ref<Tables<'projects'>[] | null>();
 
 const getProjects = async () => {
